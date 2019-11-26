@@ -40,84 +40,97 @@ class RegisterTodoManagement(Resource):
         )
 
         if mirror['exp'] + update_exp > 5000:
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-9'
+                )
+
             mirror.update(
                 level = 10
             )
 
-            mirror.stuff.append(
-                'skin-0-9'
-            )
 
         elif mirror['exp'] + update_exp > 4000:
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-8'
+                )
+
             mirror.update(
-                level = 9
+                level=9
             )
 
-            mirror.stuff.append(
-                'skin-0-8'
-            )
 
         elif mirror['exp'] + update_exp > 2000:
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-7'
+                )
+
             mirror.update(
-                level = 8
+                level=8
             )
 
-            mirror.stuff.append(
-                'skin-0-7'
-            )
 
         elif mirror['exp'] + update_exp > 1000:
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-6'
+                )
+
             mirror.update(
-                level = 7
+                level=7
             )
 
-            mirror.stuff.append(
-                'skin-0-6'
-            )
 
         elif mirror['exp'] + update_exp > 300:
-            mirror.update(
-                level = 6
-            )
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-5'
+                )
 
-            mirror.stuff.append(
-                'skin-0-5'
+            mirror.update(
+                level=6
             )
 
         elif mirror['exp'] + update_exp > 150:
-            mirror.update(
-                level = 5
-            )
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-4'
+                )
 
-            mirror.stuff.append(
-                'skin-0-4'
+            mirror.update(
+                level=5
             )
 
         elif mirror['exp'] + update_exp > 100:
-            mirror.update(
-                level = 4
-            )
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-3'
+                )
 
-            mirror.stuff.append(
-                'skin-0-3'
+            mirror.update(
+                level=4
             )
 
         elif mirror['exp'] + update_exp > 50:
-            mirror.update(
-                level = 3
-            )
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-2'
+                )
 
-            mirror.stuff.append(
-                'skin-0-2'
+            mirror.update(
+                level=3
             )
 
         elif mirror['exp'] + update_exp > 20:
-            mirror.update(
-                level = 2
-            )
+            if not mirror['level'] == 10:
+                mirror.stuff.append(
+                    'skin-0-1'
+                )
 
-            mirror.stuff.append(
-                'skin-0-1'
+            mirror.update(
+                level=2
             )
 
         mirror.save()
