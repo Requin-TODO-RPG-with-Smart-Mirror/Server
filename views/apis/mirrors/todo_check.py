@@ -44,9 +44,17 @@ class RegisterTodoManagement(Resource):
                 level = 10
             )
 
+            mirror.stuff.append(
+                'skin-0-9'
+            )
+
         elif mirror['exp'] + update_exp > 4000:
             mirror.update(
                 level = 9
+            )
+
+            mirror.stuff.append(
+                'skin-0-8'
             )
 
         elif mirror['exp'] + update_exp > 2000:
@@ -54,9 +62,17 @@ class RegisterTodoManagement(Resource):
                 level = 8
             )
 
+            mirror.stuff.append(
+                'skin-0-7'
+            )
+
         elif mirror['exp'] + update_exp > 1000:
             mirror.update(
                 level = 7
+            )
+
+            mirror.stuff.append(
+                'skin-0-6'
             )
 
         elif mirror['exp'] + update_exp > 300:
@@ -64,9 +80,17 @@ class RegisterTodoManagement(Resource):
                 level = 6
             )
 
+            mirror.stuff.append(
+                'skin-0-5'
+            )
+
         elif mirror['exp'] + update_exp > 150:
             mirror.update(
                 level = 5
+            )
+
+            mirror.stuff.append(
+                'skin-0-4'
             )
 
         elif mirror['exp'] + update_exp > 100:
@@ -74,14 +98,26 @@ class RegisterTodoManagement(Resource):
                 level = 4
             )
 
+            mirror.stuff.append(
+                'skin-0-3'
+            )
+
         elif mirror['exp'] + update_exp > 50:
             mirror.update(
                 level = 3
             )
 
+            mirror.stuff.append(
+                'skin-0-2'
+            )
+
         elif mirror['exp'] + update_exp > 20:
             mirror.update(
                 level = 2
+            )
+
+            mirror.stuff.append(
+                'skin-0-1'
             )
 
         mirror.save()
