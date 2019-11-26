@@ -4,7 +4,7 @@ from flask import Blueprint, request, abort
 from flask_restful import Api, Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
-from stuffs import head, body
+from stuffs import skin
 from models.mirror import MirrorModel
 
 
@@ -17,20 +17,19 @@ class RegisterCharManagement(Resource):
     def get(self):
 
         return {
-            'head_list': head,
-            'body_list': body
+            'skin_list': skin
         }
 
     @jwt_required
     def post(self):
         mirror = MirrorModel.objects(mirror_key=get_jwt_identity()).first()
-        item = request.json['item']
-        item_exp = request.json['exp']
+        item = request.json['skin']
+        item_money = request.json['money']
 
-        if not (item in head or item in body):
+        if not (item in skin):
             abort(409)
 
-        if mirror['exp'] < item_exp:
+        if mirror['money'] < item_money:
             abort(403)
 
         if item in mirror['stuff']:
@@ -38,6 +37,10 @@ class RegisterCharManagement(Resource):
 
         mirror.stuff.append(
             item
+        )
+
+        mirror.update(
+            exp = mirror['money'] - item_money
         )
 
         mirror.save()

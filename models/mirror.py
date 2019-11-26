@@ -11,25 +11,22 @@ class TodoModel(EmbeddedDocument):
     check = BooleanField()
 
 
-class CharModel(EmbeddedDocument):
-    head = StringField(null=True)
-
-    body = StringField(null=True)
-
-
 class MirrorModel(Document):
     mirror_key = StringField(primary_key=True)
 
-    character = EmbeddedDocumentField(CharModel)
-
+    skin = StringField()
 
     stuff = ListField(
         list = StringField(null=True)
     )
 
+    level = IntField()
+
     name = StringField()
 
     exp = IntField()
+
+    money = IntField()
 
     todo = ListField(
         list = EmbeddedDocumentField(TodoModel),

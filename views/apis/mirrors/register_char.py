@@ -1,6 +1,6 @@
 import socketio
 
-from flask import Blueprint, request, abort
+from flask import Blueprint, request
 from flask_restful import Api, Resource
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
@@ -22,6 +22,12 @@ class RegisterCharManagement(Resource):
             name = name,
 
             exp = 0,
+
+            money = 0,
+
+            level = 1,
+
+            stuff = ['skin-0-0'],
 
             todo = []
         ).save()
