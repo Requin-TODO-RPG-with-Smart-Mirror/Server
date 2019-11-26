@@ -27,6 +27,8 @@ class RegisterCharManagement(Resource):
 
             level = 1,
 
+            skin = 'skin-0-0',
+
             stuff = ['skin-0-0'],
 
             todo = []
