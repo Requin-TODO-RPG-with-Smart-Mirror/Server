@@ -1,0 +1,1 @@
+KEY_LIST = ['SVCGEE', 'VMSDGW']
