@@ -51,7 +51,7 @@ class RegisterTodoManagement(Resource):
 
 
         elif mirror['exp'] + update_exp > 4000:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 9:
                 mirror.stuff.append(
                     'skin-0-8'
                 )
@@ -62,7 +62,7 @@ class RegisterTodoManagement(Resource):
 
 
         elif mirror['exp'] + update_exp > 2000:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 8:
                 mirror.stuff.append(
                     'skin-0-7'
                 )
@@ -73,7 +73,7 @@ class RegisterTodoManagement(Resource):
 
 
         elif mirror['exp'] + update_exp > 1000:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 7:
                 mirror.stuff.append(
                     'skin-0-6'
                 )
@@ -84,7 +84,7 @@ class RegisterTodoManagement(Resource):
 
 
         elif mirror['exp'] + update_exp > 300:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 6:
                 mirror.stuff.append(
                     'skin-0-5'
                 )
@@ -94,7 +94,7 @@ class RegisterTodoManagement(Resource):
             )
 
         elif mirror['exp'] + update_exp > 150:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 5:
                 mirror.stuff.append(
                     'skin-0-4'
                 )
@@ -104,7 +104,7 @@ class RegisterTodoManagement(Resource):
             )
 
         elif mirror['exp'] + update_exp > 100:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 4:
                 mirror.stuff.append(
                     'skin-0-3'
                 )
@@ -114,7 +114,7 @@ class RegisterTodoManagement(Resource):
             )
 
         elif mirror['exp'] + update_exp > 50:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 3:
                 mirror.stuff.append(
                     'skin-0-2'
                 )
@@ -124,7 +124,7 @@ class RegisterTodoManagement(Resource):
             )
 
         elif mirror['exp'] + update_exp > 20:
-            if not mirror['level'] == 10:
+            if not mirror['level'] == 2:
                 mirror.stuff.append(
                     'skin-0-1'
                 )
