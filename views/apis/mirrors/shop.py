@@ -40,7 +40,7 @@ class RegisterCharManagement(Resource):
         )
 
         mirror.update(
-            exp = mirror['money'] - item_money
+            money = mirror['money'] - item_money
         )
 
         mirror.save()
