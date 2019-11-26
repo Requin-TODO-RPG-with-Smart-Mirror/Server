@@ -18,7 +18,9 @@ class RegisterCharManagement(Resource):
         mirror = MirrorModel.objects(mirror_key=get_jwt_identity()).first()
 
         return {
-            'stuff_list': mirror['stuff']
+            'stuff_list': mirror['stuff'],
+            'exp': mirror['exp']
+
         }
 
     @jwt_required
@@ -33,11 +35,14 @@ class RegisterCharManagement(Resource):
             mirror.update(
                 character = {'head': stuff}
             )
+            mirror.save()
+
 
         else:
             mirror.update(
                 character = {'body': stuff}
             )
+            mirror.save()
 
         sio = socketio.Client()
         sio.connect('http://{}:{}'.format('127.0.0.1', 5556))
@@ -46,7 +51,8 @@ class RegisterCharManagement(Resource):
         })
 
         return {
-
+            "head":MirrorModel.objects(mirror_key=get_jwt_identity()).first()['character']['head'],
+            "body":MirrorModel.objects(mirror_key=get_jwt_identity()).first()['character']['body'],
         }, 201
 
 

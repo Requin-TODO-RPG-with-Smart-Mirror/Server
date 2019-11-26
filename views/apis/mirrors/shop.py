@@ -33,6 +33,9 @@ class RegisterCharManagement(Resource):
         if mirror['exp'] < item_exp:
             abort(403)
 
+        if item in mirror['stuff']:
+            abort(412)
+
         mirror.stuff.append(
             item
         )
